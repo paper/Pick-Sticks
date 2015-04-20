@@ -320,7 +320,9 @@ var Game = {
   },
   
   bindUserTouch : _.once(function(){
-
+    
+    var $canvas = $(canvas);
+    
     canvas.addEventListener(touchClick, function(e){
     
       if( !OtherOption.canPlayKey ) return;
@@ -328,8 +330,8 @@ var Game = {
       var event_x = isMobile ? e.targetTouches[0].pageX : e.pageX;
       var event_y = isMobile ? e.targetTouches[0].pageY : e.pageY;
       
-      var canvas_left = canvas.offsetLeft;
-      var canvas_top = 0;
+      var canvas_left = $canvas.offset().left;
+      var canvas_top = $canvas.offset().top;
       
       var circle_x = event_x - canvas_left;
       var circle_y = event_y - canvas_top;

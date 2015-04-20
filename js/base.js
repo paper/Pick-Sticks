@@ -29,17 +29,31 @@ var touchClick = isMobile ? 'touchstart' : 'click';
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 
-if( !isMobile ){
-  var bodyWidth = 320;
-  var bodyHeight = 568;
+var body = document.body;
+var wrap = document.getElementById('J_wrap');
+
+var wrapWidth;
+var wrapHeight;
   
-  document.body.style.width = bodyWidth + "px";
-  document.body.style.height = bodyHeight + "px";
-  document.body.style.backgroundColor = "#444";
+if( !isMobile ){
+  wrapWidth = 320;
+  wrapHeight = 568;
+  
+  setStyle(wrap, {
+    margin: '0 auto',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    borderRadius: '10px',
+    width : wrapWidth + "px",
+    height : wrapHeight + "px"
+  });
+  
+}else{
+  hide('J_wx');
 }
 
-var windowWidth = canvas.width = bodyWidth ? bodyWidth : document.body.clientWidth;
-var windowHeight = canvas.height = bodyHeight ? bodyHeight : document.body.clientHeight;
+var windowWidth = canvas.width = wrapWidth ? wrapWidth : body.clientWidth;
+var windowHeight = canvas.height = wrapHeight ? wrapHeight : body.clientHeight;
 
 /**==================================================
   棍子 设置
@@ -53,7 +67,7 @@ var StickOption = {
   up : [],
   
   // 棍子的数量
-  number : 2,
+  number : 10,
   
   hardType : {
     'easy' : 10,
@@ -188,10 +202,12 @@ function setHardType(type){
 }
 
 function show(elem){
+  elem = typeof elem === "string" ? document.getElementById(elem) : elem;
   elem.style.display = "block";
 }
 
 function hide(elem){
+  elem = typeof elem === "string" ? document.getElementById(elem) : elem;
   elem.style.display = "none";
 }
 
@@ -215,8 +231,8 @@ function loadStyle(cssStr) {
   style.setAttribute('type', 'text/css');
   style.appendChild(document.createTextNode(cssStr));
   
-  var wrap = document.head || document.body;
-  wrap.appendChild(style);
+  var head = document.head || body;
+  head.appendChild(style);
 }
 
 function isNumeric(obj){
@@ -727,21 +743,23 @@ domElem.back_to_index_btn.addEventListener(touchClick, function(e){
 }, false);
 
 // 禁止页面滚动
-document.body.addEventListener('touchmove', function(e){
+body.addEventListener('touchmove', function(e){
   e.preventDefault();
 }, false);
 
 // fix 微信快速点击2次
-document.body.addEventListener('touchstart', function(e){
+body.addEventListener('touchstart', function(e){
   e.preventDefault();
 }, false);
 
 // 判断横竖屏
 var changeEvt = "onorientationchange" in window ? "orientationchange" : "resize";
 
-window.addEventListener(changeEvt, function(){
-  location.reload();
-}, false);
+if(isMobile){
+   window.addEventListener(changeEvt, function(){
+       location.reload();
+    }, false); 
+}
 
 window.addEventListener('load', function(){
   

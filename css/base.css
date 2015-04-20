@@ -10,6 +10,7 @@ html, body{
   -webkit-user-select : none;
   -webkit-touch-callout : none;
 }
+body{background-color:#444;}
 a,button{
   -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
@@ -170,7 +171,8 @@ button:focus{
   cursor:pointer;
   display:inline-block;
   border-radius:30px;
-  padding: 6px 0 5px;
+  height: 33px;
+  line-height:30px;
   width:130px;
   font-size:14px;
   border:0 none;
@@ -187,12 +189,12 @@ button:focus{
 }
 .btn-mini{
   width: 70px;
-  padding: 5px 0 4px;
 }
 .btn-big{
   width: 160px;
-  font-size:16px;
-  padding: 10px 0 9px;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
 }
 
 /* sp word */

@@ -9,22 +9,27 @@
   <link href='http://www.youziku.com/webfont/NameCSS/34374' rel='stylesheet' type='text/css'/>
   
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/ps.css">
+  <link rel="stylesheet" href="css/base.css?t=20150411">
+  <link rel="stylesheet" href="css/ps.css?t=20150411">
   <script src="js/underscore.min.js"></script>
   <script src="js/zepto.min-1.1.4.js"></script>
 </head>
 <body>
   
-  <div class="game-loading" id="J_game_loading">
-    
-    <div class="p-loading-road"><i></i></div>
-    
-    <p>Game Loading...</p>
-    
+  <div class="wx" id="J_wx">
+    <img src="img/wx.png" />
+    <p>扫一扫</p>
   </div>
   
-  <div class="wrap">
+  <div class="wrap" id="J_wrap">
+    
+    <div class="game-loading" id="J_game_loading">
+    
+      <div class="p-loading-road"><i></i></div>
+      
+      <p>Game Loading...</p>
+      
+    </div>
     
     <div class="z z-a" id="J_za">
       
@@ -38,7 +43,7 @@
           <h1 class="spw">PickSticks</h1>
         </div>
 
-        <a href="###" class="start-game-btn" id="J_start_game_btn">
+        <a href="javascript:;" class="start-game-btn" id="J_start_game_btn">
           <button type="button" class="btn btn-solid btn-big" >Play</button>
         </a>
         
@@ -121,7 +126,7 @@
                 </ul>
               </div>
               
-              <div class="btn-wrap">
+              <div class="btn-wrap clearfix">
                 <div><span id="J_back_to_index_btn" class="btn btn-hollow">Home</span></div>
                 <div><span id="J_game_again_btn" class="btn btn-solid">Again</span></div>
               </div>
@@ -149,10 +154,10 @@
     
   </div>
   
-  <script src="js/base.js"></script>
+  <script src="js/base.js?t=20150411"></script>
   <script src="js/stick.js"></script>
   <script src="js/circle.js"></script>
-  <script src="js/core.js"></script>
+  <script src="js/core.js?t=20150411"></script>
 
   
 </body>

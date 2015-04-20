@@ -1,5 +1,31 @@
 @charset "utf-8";
 
+/*wx*/
+.wx{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  left: 50%;
+  transform: translateY(-50%);
+  margin-left: 240px;
+  opacity:0.2;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+}
+.wx img{
+  padding:4px;
+  background-color:#fff;
+}
+.wx p{
+  font-size:14px;
+  padding:6px 0;
+  color:#9D9292;
+}
+
+.wx:hover{opacity:1;}
+
 /*game loading*/
 .game-loading{
   position: absolute;
@@ -25,6 +51,7 @@
   z-index:1;
   width:100%;
   height:100%;
+  overflow:hidden;
 }
 
 
@@ -233,7 +260,6 @@
 
 .game-success-tip-box-bd .btn-wrap{
   text-align:center;
-  overflow:hidden;
 }
 .game-success-tip-box-bd .btn-wrap div{
   width:50%;
