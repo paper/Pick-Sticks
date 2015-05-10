@@ -9,3 +9,8 @@
 优化速度 与 美化UI :D
 
 试玩地址：http://pick-sticks-paper.coding.io/
+
+---
+
+赢了个机械键盘～～哈哈
+https://coding.net/u/coding/p/marketing/topic/31972
